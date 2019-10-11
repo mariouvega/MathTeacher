@@ -53,13 +53,19 @@ public class MathTeacher {
         switch(userInput)
         {
             case 1:
-                addNumbers(firstNum,secondNum);
+            int answer = MathTeacher.addNumbers(firstNum,secondNum);
+                System.out.println(answer);
+                break;
+
             case 2:
-                subtractNumbers(firstNum,secondNum);
+                System.out.println(subtractNumbers(firstNum,secondNum));
+                break;
             case 3:
-                multiplyNumbers(firstNum,secondNum);
+                System.out.println(multiplyNumbers(firstNum,secondNum));
+                break;
             case 4:
-                divideNumbers(firstNum,secondNum );
+                System.out.println(divideNumbers(firstNum,secondNum));
+                break;
         }
         
         System.out.println("Enter 'Quit' to end the program.");
