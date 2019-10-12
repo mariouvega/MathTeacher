@@ -39,39 +39,51 @@ public class MathTeacher {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-        System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
-        System.out.println("Enter two integers:");
+        boolean run = true;
         
-        Scanner scan = new Scanner(System.in);
-        int firstNum = scan.nextInt();
-        int secondNum = scan.nextInt();
+        while (run) {            
+            System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
+            System.out.println("Enter two integers:");
+        
+            Scanner scan = new Scanner(System.in);
+            int firstNum = scan.nextInt();
+            int secondNum = scan.nextInt();
                 
-	System.out.println("Enter 1 to add the two numbers.");
-	System.out.println("Enter 2 to subtract the second number from the first number.");
-	System.out.println("Enter 3 to multiply the two numbers.");
-	System.out.println("Enter 4 to divide the first number by the second number.");
+            System.out.println("Enter 1 to add the two numbers.");
+            System.out.println("Enter 2 to subtract the second number from the first number.");
+            System.out.println("Enter 3 to multiply the two numbers.");
+            System.out.println("Enter 4 to divide the first number by the second number.");
         
-        int userInput = scan.nextInt();
+            int userInput = scan.nextInt();
         
-        switch(userInput)
-        {
-            case 1:
-                System.out.println(MathTeacher.addNumbers(firstNum, secondNum));
-                break;
+            switch(userInput)
+            {
+                case 1:
+                    System.out.println(MathTeacher.addNumbers(firstNum, secondNum));
+                    break;
 
-            case 2:
-                System.out.println(MathTeacher.subtractNumbers(firstNum, secondNum));
-                break;
-            case 3:
-                System.out.println(MathTeacher.multiplyNumbers(firstNum, secondNum));
-                break;
-            case 4:
-                System.out.println(MathTeacher.divideNumbers(firstNum, secondNum));
-                break;
-        }
+                case 2:
+                    System.out.println(MathTeacher.subtractNumbers(firstNum, secondNum));
+                    break;
+                case 3:
+                    System.out.println(MathTeacher.multiplyNumbers(firstNum, secondNum));
+                    break;
+                case 4:
+                    System.out.println(MathTeacher.divideNumbers(firstNum, secondNum));
+                    break;
+            }
         
-        System.out.println("Enter 'Quit' to end the program.");
+            System.out.println("Enter 'Quit' to end the program.");
+        
+            String quit = scan.next();
+        
+            if(quit.equalsIgnoreCase("quit"))
+            {
+                run = false;
+            }   
+        }
         
     }
 }
