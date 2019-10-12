@@ -13,25 +13,46 @@ import java.util.Scanner;
  */
 public class MathTeacher {
     
+    public int n1, n2;
+
+    public MathTeacher(int n1, int n2) {
+        this.n1 = n1;
+        this.n2 = n2;
+    }
+    
     public static int addNumbers(int n1, int n2){
-        int result = n1 + n2;
-        return result;
+        return n1 + n2;
     }
     
     public static int subtractNumbers(int n1, int n2){
-        int result = n1 - n2;
-        return result;
+        return n1 - n2;
     }
     
     public static int multiplyNumbers(int n1, int n2){
-        int result = n1 * n2;
-        return result;
+        return n1 * n2;
     }
     
     public static int divideNumbers(int n1, int n2){
-        int result = n2 / n1;
-        return result;
+        return n2 / n1;
     }
+
+    public int getN1() {
+        return n1;
+    }
+
+    public void setN1(int n1) {
+        this.n1 = n1;
+    }
+
+    public int getN2() {
+        return n2;
+    }
+
+    public void setN2(int n2) {
+        this.n2 = n2;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -42,29 +63,28 @@ public class MathTeacher {
         Scanner scan = new Scanner(System.in);
         int firstNum = scan.nextInt();
         int secondNum = scan.nextInt();
-        
-		System.out.println("Enter 1 to add the two numbers.");
-		System.out.println("Enter 2 to subtract the second number from the first number.");
-		System.out.println("Enter 3 to multiply the two numbers.");
-		System.out.println("Enter 4 to divide the first number by the second number.");
+                
+	System.out.println("Enter 1 to add the two numbers.");
+	System.out.println("Enter 2 to subtract the second number from the first number.");
+	System.out.println("Enter 3 to multiply the two numbers.");
+	System.out.println("Enter 4 to divide the first number by the second number.");
         
         int userInput = scan.nextInt();
         
         switch(userInput)
         {
             case 1:
-            int answer = MathTeacher.addNumbers(firstNum,secondNum);
-                System.out.println(answer);
+                System.out.println(MathTeacher.addNumbers(firstNum, secondNum));
                 break;
 
             case 2:
-                System.out.println(subtractNumbers(firstNum,secondNum));
+                System.out.println(MathTeacher.subtractNumbers(firstNum, secondNum));
                 break;
             case 3:
-                System.out.println(multiplyNumbers(firstNum,secondNum));
+                System.out.println(MathTeacher.multiplyNumbers(firstNum, secondNum));
                 break;
             case 4:
-                System.out.println(divideNumbers(firstNum,secondNum));
+                System.out.println(MathTeacher.divideNumbers(firstNum, secondNum));
                 break;
         }
         
