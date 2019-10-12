@@ -41,10 +41,12 @@ public class MathTeacher {
      */
     
     public static void main(String[] args) {
+        // boolean to keep prgram running
         boolean run = true;
         
         System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
         
+        // Loop to keep running until user enter quit
         while (run) {
             System.out.println("Enter two integers:");
         
@@ -52,7 +54,7 @@ public class MathTeacher {
             boolean isNum;
             int firstNum = 0;
             int secondNum = 0;
-            
+            // Input verification, expecting an Int; for firstNum
             do {                
                 if (scan.hasNextInt()) {
                     firstNum = scan.nextInt();
@@ -62,7 +64,7 @@ public class MathTeacher {
                     scan.next();
                 }
             } while (!isNum);
-            
+            // Input verification, expecting an Int; for secondNum
             do {                
                 if (scan.hasNextInt()) {
                     secondNum = scan.nextInt();
@@ -79,7 +81,7 @@ public class MathTeacher {
             System.out.println("Enter 4 to divide the first number by the second number.");
         
             int userInput = 0;
-            
+            // Input verification, expecting an Int; for userInput for menu selection
             do {                
                 if (scan.hasNextInt()) {
                     userInput = scan.nextInt();
@@ -89,7 +91,8 @@ public class MathTeacher {
                     scan.next();
                 }
             } while (!isNum);
-        
+            
+            // Menu
             switch(userInput)
             {
                 case 1:
