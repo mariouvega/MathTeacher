@@ -33,7 +33,7 @@ public class MathTeacher {
     }
     
     public static int divideNumbers(int n1, int n2){
-        return n2 / n1;
+        return n1 / n2;
     }
     
     /**
@@ -43,20 +43,52 @@ public class MathTeacher {
     public static void main(String[] args) {
         boolean run = true;
         
-        while (run) {            
-            System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
+        System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
+        
+        while (run) {
             System.out.println("Enter two integers:");
         
             Scanner scan = new Scanner(System.in);
-            int firstNum = scan.nextInt();
-            int secondNum = scan.nextInt();
-                
+            boolean isNum;
+            int firstNum = 0;
+            int secondNum = 0;
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    firstNum = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    secondNum = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
+            
             System.out.println("Enter 1 to add the two numbers.");
             System.out.println("Enter 2 to subtract the second number from the first number.");
             System.out.println("Enter 3 to multiply the two numbers.");
             System.out.println("Enter 4 to divide the first number by the second number.");
         
-            int userInput = scan.nextInt();
+            int userInput = 0;
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    userInput = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
         
             switch(userInput)
             {
@@ -82,7 +114,7 @@ public class MathTeacher {
             if(quit.equalsIgnoreCase("quit"))
             {
                 run = false;
-            }   
+            }
         }
         
     }
