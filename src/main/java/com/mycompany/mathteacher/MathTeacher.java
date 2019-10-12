@@ -33,45 +33,89 @@ public class MathTeacher {
     }
     
     public static int divideNumbers(int n1, int n2){
-        return n2 / n1;
+        return n1 / n2;
     }
     
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
+        boolean run = true;
+        
         System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
-        System.out.println("Enter two integers:");
         
-        Scanner scan = new Scanner(System.in);
-        int firstNum = scan.nextInt();
-        int secondNum = scan.nextInt();
-                
-	System.out.println("Enter 1 to add the two numbers.");
-	System.out.println("Enter 2 to subtract the second number from the first number.");
-	System.out.println("Enter 3 to multiply the two numbers.");
-	System.out.println("Enter 4 to divide the first number by the second number.");
+        while (run) {
+            System.out.println("Enter two integers:");
         
-        int userInput = scan.nextInt();
+            Scanner scan = new Scanner(System.in);
+            boolean isNum;
+            int firstNum = 0;
+            int secondNum = 0;
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    firstNum = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    secondNum = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
+            
+            System.out.println("Enter 1 to add the two numbers.");
+            System.out.println("Enter 2 to subtract the second number from the first number.");
+            System.out.println("Enter 3 to multiply the two numbers.");
+            System.out.println("Enter 4 to divide the first number by the second number.");
         
-        switch(userInput)
-        {
-            case 1:
-                System.out.println(MathTeacher.addNumbers(firstNum, secondNum));
-                break;
+            int userInput = 0;
+            
+            do {                
+                if (scan.hasNextInt()) {
+                    userInput = scan.nextInt();
+                    isNum = true;
+                }else{
+                    isNum = false;
+                    scan.next();
+                }
+            } while (!isNum);
+        
+            switch(userInput)
+            {
+                case 1:
+                    System.out.println(MathTeacher.addNumbers(firstNum, secondNum));
+                    break;
 
-            case 2:
-                System.out.println(MathTeacher.subtractNumbers(firstNum, secondNum));
-                break;
-            case 3:
-                System.out.println(MathTeacher.multiplyNumbers(firstNum, secondNum));
-                break;
-            case 4:
-                System.out.println(MathTeacher.divideNumbers(firstNum, secondNum));
-                break;
-        }
+                case 2:
+                    System.out.println(MathTeacher.subtractNumbers(firstNum, secondNum));
+                    break;
+                case 3:
+                    System.out.println(MathTeacher.multiplyNumbers(firstNum, secondNum));
+                    break;
+                case 4:
+                    System.out.println(MathTeacher.divideNumbers(firstNum, secondNum));
+                    break;
+            }
         
-        System.out.println("Enter 'Quit' to end the program.");
+            System.out.println("Enter 'Quit' to end the program.");
+        
+            String quit = scan.next();
+        
+            if(quit.equalsIgnoreCase("quit"))
+            {
+                run = false;
+            }
+        }
         
     }
 }
