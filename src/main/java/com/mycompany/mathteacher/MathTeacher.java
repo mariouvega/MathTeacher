@@ -40,30 +40,38 @@ public class MathTeacher {
      * @param args the command line arguments
      */
     
+//    public static void idInt()
+//        {
+//            do {                
+//                if (scan.hasNextInt()) {
+//                    firstNum = scan.nextInt();
+//                    isNum = true;
+//                }else{
+//                    isNum = false;
+//                    scan.next();
+//                }
+//            } while (!isNum);
+//        }
+    
     public static void main(String[] args) {
+        // Int verification
+        
+        
         // boolean to keep prgram running
         boolean run = true;
+        Scanner scan = new Scanner(System.in);
+        boolean isNum;
+        int firstNum = 0;
+        int secondNum = 0;
         
         System.out.println("Welcome to *Mental Math Practice* where you can test your addition, subtraction, multiplication, and division.");
         
         // Loop to keep running until user enter quit
         while (run) {
             System.out.println("Enter two integers:");
-        
-            Scanner scan = new Scanner(System.in);
-            boolean isNum;
-            int firstNum = 0;
-            int secondNum = 0;
+                 
             // Input verification, expecting an Int; for firstNum
-            do {                
-                if (scan.hasNextInt()) {
-                    firstNum = scan.nextInt();
-                    isNum = true;
-                }else{
-                    isNum = false;
-                    scan.next();
-                }
-            } while (!isNum);
+            
             // Input verification, expecting an Int; for secondNum
             do {                
                 if (scan.hasNextInt()) {
